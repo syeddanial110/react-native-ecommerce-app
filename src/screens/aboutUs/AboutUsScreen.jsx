@@ -12,7 +12,7 @@ const AboutUsScreen = ({navigation}) => {
         <Text>Count : {count}</Text>
         <Button
           title="Go to Details"
-          onPress={() => navigation.navigate('About')}
+          onPress={() => navigation.navigate('ProductDetail')}
         />
         <Button title="Counter" onPress={() => setCount(count + 1)} />
       </View>
