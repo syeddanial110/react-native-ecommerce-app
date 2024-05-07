@@ -4,6 +4,8 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import HomeScreen from '../screens/home/HomeScreen';
 import AboutUsScreen from '../screens/aboutUs/AboutUsScreen';
 import ContactUs from '../screens/contactUs/ContactUs';
+import BottomTabNavigator from './TabNavigation';
+import ChatScreen from '../screens/Chat/ChatScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -17,9 +19,18 @@ const screenOptionStyle = {
 
 const MainStackNavigator = () => {
   return (
-    <Stack.Navigator screenOptions={screenOptionStyle}>
-      <Stack.Screen name="Home" component={HomeScreen} />
-      <Stack.Screen name="AboutUs" component={AboutUsScreen} />
+    <Stack.Navigator
+      initialRouteName="Tab"
+      screenOptions={{
+        headerStyle: {
+          backgroundColor: '#9AC4F8',
+        },
+        headerTintColor: 'white',
+        headerBackTitle: 'Back',
+        headerShown: false,
+      }}>
+      <Stack.Screen name="Tab" component={BottomTabNavigator} />
+      <Stack.Screen name="Chat" component={ChatScreen} />
     </Stack.Navigator>
   );
 };
@@ -27,7 +38,7 @@ const MainStackNavigator = () => {
 const ContactStackNavigator = () => {
   return (
     <Stack.Navigator screenOptions={screenOptionStyle}>
-      <Stack.Screen name="ContactUs" component={ContactUs} />
+      <Stack.Screen name="ContactU23s" component={ContactUs} />
     </Stack.Navigator>
   );
 };

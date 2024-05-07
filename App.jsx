@@ -6,24 +6,30 @@
  */
 
 import React, {useState} from 'react';
-import {SafeAreaView, StyleSheet, KeyboardAvoidingView} from 'react-native';
+import {
+  SafeAreaView,
+  StyleSheet,
+  KeyboardAvoidingView,
+  StatusBar,
+} from 'react-native';
 
 import {mainBgColor} from './src/assets/Colors/colors';
 
-
 import DrawerNavigation from './src/navigations/DrawerNavigation';
-import { NavigationContainer } from '@react-navigation/native';
+import {NavigationContainer} from '@react-navigation/native';
+import BottomTabNavigator from './src/navigations/TabNavigation';
+import { MainStackNavigator } from './src/navigations/StackNavigation';
 
 function App() {
   return (
     <>
       <SafeAreaView style={{flex: 1, backgroundColor: mainBgColor}}>
         {/* <KeyboardAvoidingView style={{flex: 1}}> */}
-        {/* <StatusBar translucent backgroundColor={mainBgColor} /> */}
+        <StatusBar backgroundColor={mainBgColor} />
         <NavigationContainer>
-          <DrawerNavigation />
+          {/* <BottomTabNavigator /> */}
+          <MainStackNavigator />
         </NavigationContainer>
-        {/* </KeyboardAvoidingView> */}
       </SafeAreaView>
     </>
   );
